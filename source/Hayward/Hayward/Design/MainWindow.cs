@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Windows.Forms;
 using System.IO;
 
@@ -13,7 +9,7 @@ namespace Hayward
 {
     public partial class MainWindow : Form
     {
-        private List<string> slPattern = new List<string>();
+        private List<string> slPattern;
         private List<Label> lLabelCountList;
         private List<Label> lLabelList;
         private int[] iPatternCount;
@@ -60,8 +56,9 @@ namespace Hayward
 
         private void InitData()
         {
+            this.slPattern = new List<string>();
             this.iPatternCount = new int[this.nPatterns];
-            lLabelCountList = new List<Label>
+            this.lLabelCountList = new List<Label>
             {
                 label_PCount_1_1,
                 label_PCount_1_2,
@@ -79,7 +76,7 @@ namespace Hayward
                 label_PCount_2_7
             };
 
-            lLabelList = new List<Label>
+            this.lLabelList = new List<Label>
             {
                 label_P1_1,
                 label_P1_2,
@@ -98,50 +95,50 @@ namespace Hayward
             };
         }
 
-        private void btn_ohho_Click(object sender, EventArgs e)
+        private void Button_ohho_Click(object sender, EventArgs e)
         {
-            slPattern.Add("S");
+            this.slPattern.Add("S");
             pictureBox_express.Image = Properties.Resources.thumbsup;
             pictureBox_express.Refresh();
-            vUpdateText();
+            UpdateText();
         }
 
-        private void btn_ahhh_Click(object sender, EventArgs e)
+        private void Button_ahhh_Click(object sender, EventArgs e)
         {
-            slPattern.Add("F");
+            this.slPattern.Add("F");
             pictureBox_express.Image = Properties.Resources.fail;
             pictureBox_express.Refresh();
-            vUpdateText();
+            UpdateText();
         }
 
-        private void vUpdateText()
+        private void UpdateText()
         {
-            richTextBox_sequence.Text = string.Join("", slPattern);
+            RichTextBox_sequence.Text = string.Join("", slPattern);
 
-            vSearchPatterns();
+            SearchPatterns();
         }
 
-        private void vSearchPatterns()
+        private void SearchPatterns()
         {
             // Count Pattern Occurences
             for (int i = 0; i < nPatterns; ++i)
             {
-                iPatternCount[i] = Utils.CountPattern(richTextBox_sequence, sPatterns[i]);
-                if (lLabelCountList[i].Text != Utils.CountPattern(richTextBox_sequence, sPatterns[i]).ToString())
+                this.iPatternCount[i] = Utils.CountPattern(RichTextBox_sequence, sPatterns[i]);
+                if (this.lLabelCountList[i].Text != Utils.CountPattern(RichTextBox_sequence, this.sPatterns[i]).ToString())
                 {
-                    lLabelCountList[i].BackColor = Color.LightPink;
+                    this.lLabelCountList[i].BackColor = Color.LightPink;
                 }
                 else
                 {
-                    lLabelCountList[i].BackColor = Color.LightGray;
+                    this.lLabelCountList[i].BackColor = Color.LightGray;
                 }
-                lLabelCountList[i].Text = Utils.CountPattern(richTextBox_sequence, sPatterns[i]).ToString();
-                lLabelList[i].BackColor = Color.LightGray;
+                this.lLabelCountList[i].Text = Utils.CountPattern(RichTextBox_sequence, this.sPatterns[i]).ToString();
+                this.lLabelList[i].BackColor = Color.LightGray;
             }
 
-            int maxValue = iPatternCount.Max();
-            int maxIndex = iPatternCount.ToList().IndexOf(maxValue);
-            Utils.HighlightPattern(richTextBox_sequence, sPatterns[maxIndex], cColors[maxIndex]);
+            int maxValue = this.iPatternCount.Max();
+            int maxIndex = this.iPatternCount.ToList().IndexOf(maxValue);
+            Utils.HighlightPattern(RichTextBox_sequence, this.sPatterns[maxIndex], this.cColors[maxIndex]);
 
             if (maxValue != 0)
             {
@@ -150,7 +147,18 @@ namespace Hayward
             }
         }
 
-        private void pictureBox_holgi_DoubleClick(object sender, EventArgs e)
+        private void Reset_Data()
+        {
+            for (int i = 0; i < nPatterns; ++i)
+            {
+                this.lLabelCountList[i].BackColor = Color.LightGray;
+                this.lLabelCountList[i].Text = "0";
+                this.lLabelList[i].BackColor = Color.LightGray;
+            }
+            this.slPattern.Clear();
+        }
+
+        private void PictureBox_holgi_DoubleClick(object sender, EventArgs e)
         {
             Form About = new Hayward.Design.About();
             About.ShowDialog();
@@ -158,14 +166,8 @@ namespace Hayward
 
         private void Reset_Click(object sender, EventArgs e)
         {
-            richTextBox_sequence.Text = "";
-            for (int i = 0; i < nPatterns; ++i)
-            {
-                lLabelCountList[i].BackColor = Color.LightGray;
-                lLabelCountList[i].Text = "0";
-                lLabelList[i].BackColor = Color.LightGray;
-            }
-            slPattern.Clear();
+            RichTextBox_sequence.Text = "";
+            Reset_Data();
         }
 
         private void Export_Click(object sender, EventArgs e)
@@ -180,7 +182,7 @@ namespace Hayward
             {
                 using (StreamWriter writer = new StreamWriter(saveFileDialog1.OpenFile()))
                 {
-                    writer.WriteLine(richTextBox_sequence.Text);
+                    writer.WriteLine(RichTextBox_sequence.Text);
                     writer.Flush();
                     writer.Close();
                 }

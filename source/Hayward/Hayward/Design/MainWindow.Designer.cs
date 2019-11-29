@@ -58,11 +58,11 @@
             this.label_P1_2 = new System.Windows.Forms.Label();
             this.label_PCount_1_1 = new System.Windows.Forms.Label();
             this.label_P1_1 = new System.Windows.Forms.Label();
-            this.richTextBox_sequence = new System.Windows.Forms.RichTextBox();
+            this.RichTextBox_sequence = new System.Windows.Forms.RichTextBox();
             this.Reset = new System.Windows.Forms.Button();
             this.Export = new System.Windows.Forms.Button();
-            this.btn_ahhh = new System.Windows.Forms.Button();
-            this.btn_ohho = new System.Windows.Forms.Button();
+            this.Button_Ahhh = new System.Windows.Forms.Button();
+            this.Button_Ohho = new System.Windows.Forms.Button();
             this.pictureBox_express = new System.Windows.Forms.PictureBox();
             this.pictureBox_holgi = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
@@ -419,14 +419,14 @@
             this.label_P1_1.TabIndex = 0;
             this.label_P1_1.Text = "3F2S1(H)";
             // 
-            // richTextBox_sequence
+            // RichTextBox_sequence
             // 
-            this.richTextBox_sequence.Location = new System.Drawing.Point(13, 161);
-            this.richTextBox_sequence.Name = "richTextBox_sequence";
-            this.richTextBox_sequence.ReadOnly = true;
-            this.richTextBox_sequence.Size = new System.Drawing.Size(364, 154);
-            this.richTextBox_sequence.TabIndex = 6;
-            this.richTextBox_sequence.Text = "";
+            this.RichTextBox_sequence.Location = new System.Drawing.Point(13, 161);
+            this.RichTextBox_sequence.Name = "RichTextBox_sequence";
+            this.RichTextBox_sequence.ReadOnly = true;
+            this.RichTextBox_sequence.Size = new System.Drawing.Size(364, 154);
+            this.RichTextBox_sequence.TabIndex = 6;
+            this.RichTextBox_sequence.Text = "";
             // 
             // Reset
             // 
@@ -450,27 +450,27 @@
             this.Export.UseVisualStyleBackColor = true;
             this.Export.Click += new System.EventHandler(this.Export_Click);
             // 
-            // btn_ahhh
+            // Button_Ahhh
             // 
-            this.btn_ahhh.BackgroundImage = global::Hayward.Properties.Resources.ahhh;
-            this.btn_ahhh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_ahhh.Location = new System.Drawing.Point(13, 83);
-            this.btn_ahhh.Name = "btn_ahhh";
-            this.btn_ahhh.Size = new System.Drawing.Size(147, 65);
-            this.btn_ahhh.TabIndex = 1;
-            this.btn_ahhh.UseVisualStyleBackColor = true;
-            this.btn_ahhh.Click += new System.EventHandler(this.btn_ahhh_Click);
+            this.Button_Ahhh.BackgroundImage = global::Hayward.Properties.Resources.ahhh;
+            this.Button_Ahhh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Button_Ahhh.Location = new System.Drawing.Point(13, 83);
+            this.Button_Ahhh.Name = "Button_Ahhh";
+            this.Button_Ahhh.Size = new System.Drawing.Size(147, 65);
+            this.Button_Ahhh.TabIndex = 1;
+            this.Button_Ahhh.UseVisualStyleBackColor = true;
+            this.Button_Ahhh.Click += new System.EventHandler(this.Button_ahhh_Click);
             // 
-            // btn_ohho
+            // Button_Ohho
             // 
-            this.btn_ohho.BackgroundImage = global::Hayward.Properties.Resources.ohho;
-            this.btn_ohho.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_ohho.Location = new System.Drawing.Point(13, 12);
-            this.btn_ohho.Name = "btn_ohho";
-            this.btn_ohho.Size = new System.Drawing.Size(147, 65);
-            this.btn_ohho.TabIndex = 0;
-            this.btn_ohho.UseVisualStyleBackColor = true;
-            this.btn_ohho.Click += new System.EventHandler(this.btn_ohho_Click);
+            this.Button_Ohho.BackgroundImage = global::Hayward.Properties.Resources.ohho;
+            this.Button_Ohho.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Button_Ohho.Location = new System.Drawing.Point(13, 12);
+            this.Button_Ohho.Name = "Button_Ohho";
+            this.Button_Ohho.Size = new System.Drawing.Size(147, 65);
+            this.Button_Ohho.TabIndex = 0;
+            this.Button_Ohho.UseVisualStyleBackColor = true;
+            this.Button_Ohho.Click += new System.EventHandler(this.Button_ohho_Click);
             // 
             // pictureBox_express
             // 
@@ -494,7 +494,7 @@
             this.pictureBox_holgi.Size = new System.Drawing.Size(311, 317);
             this.pictureBox_holgi.TabIndex = 4;
             this.pictureBox_holgi.TabStop = false;
-            this.pictureBox_holgi.DoubleClick += new System.EventHandler(this.pictureBox_holgi_DoubleClick);
+            this.pictureBox_holgi.DoubleClick += new System.EventHandler(this.PictureBox_holgi_DoubleClick);
             // 
             // MainWindow
             // 
@@ -503,10 +503,10 @@
             this.ClientSize = new System.Drawing.Size(595, 324);
             this.Controls.Add(this.Export);
             this.Controls.Add(this.Reset);
-            this.Controls.Add(this.richTextBox_sequence);
+            this.Controls.Add(this.RichTextBox_sequence);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btn_ahhh);
-            this.Controls.Add(this.btn_ohho);
+            this.Controls.Add(this.Button_Ahhh);
+            this.Controls.Add(this.Button_Ohho);
             this.Controls.Add(this.pictureBox_express);
             this.Controls.Add(this.pictureBox_holgi);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -523,11 +523,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_ohho;
-        private System.Windows.Forms.Button btn_ahhh;
+        private System.Windows.Forms.Button Button_Ohho;
+        private System.Windows.Forms.Button Button_Ahhh;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label_P1_1;
-        private System.Windows.Forms.RichTextBox richTextBox_sequence;
+        private System.Windows.Forms.RichTextBox RichTextBox_sequence;
         private System.Windows.Forms.Label label_PCount_1_1;
         private System.Windows.Forms.Label label_PCount_2_7;
         private System.Windows.Forms.Label label_PCount_2_6;
