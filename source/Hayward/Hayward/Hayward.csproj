@@ -72,12 +72,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="Resources\thumbsup.gif" />
     <None Include="Resources\fail.png" />
     <None Include="Resources\hayward.png" />
     <None Include="Resources\holgi.png" />
     <None Include="Resources\holgitrans.png" />
+    <None Include="Resources\haywardtrans.png" />
     <Content Include="Resources\icon.ico" />
     <None Include="Resources\ohho.png" />
     <None Include="Resources\ahhh.png" />

@@ -41,7 +41,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Hayward v0.1";
+            this.label1.Text = "Hayward v0.2";
             // 
             // label2
             // 

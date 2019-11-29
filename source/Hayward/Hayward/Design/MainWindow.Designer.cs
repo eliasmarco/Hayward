@@ -59,9 +59,11 @@
             this.label_PCount_1_1 = new System.Windows.Forms.Label();
             this.label_P1_1 = new System.Windows.Forms.Label();
             this.richTextBox_sequence = new System.Windows.Forms.RichTextBox();
-            this.pictureBox_express = new System.Windows.Forms.PictureBox();
+            this.Reset = new System.Windows.Forms.Button();
+            this.Export = new System.Windows.Forms.Button();
             this.btn_ahhh = new System.Windows.Forms.Button();
             this.btn_ohho = new System.Windows.Forms.Button();
+            this.pictureBox_express = new System.Windows.Forms.PictureBox();
             this.pictureBox_holgi = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_express)).BeginInit();
@@ -426,16 +428,27 @@
             this.richTextBox_sequence.TabIndex = 6;
             this.richTextBox_sequence.Text = "";
             // 
-            // pictureBox_express
+            // Reset
             // 
-            this.pictureBox_express.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_express.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox_express.Location = new System.Drawing.Point(372, -2);
-            this.pictureBox_express.Name = "pictureBox_express";
-            this.pictureBox_express.Size = new System.Drawing.Size(128, 111);
-            this.pictureBox_express.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox_express.TabIndex = 7;
-            this.pictureBox_express.TabStop = false;
+            this.Reset.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reset.Location = new System.Drawing.Point(383, 231);
+            this.Reset.Name = "Reset";
+            this.Reset.Size = new System.Drawing.Size(75, 39);
+            this.Reset.TabIndex = 8;
+            this.Reset.Text = "RESET";
+            this.Reset.UseVisualStyleBackColor = true;
+            this.Reset.Click += new System.EventHandler(this.Reset_Click);
+            // 
+            // Export
+            // 
+            this.Export.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Export.Location = new System.Drawing.Point(383, 276);
+            this.Export.Name = "Export";
+            this.Export.Size = new System.Drawing.Size(75, 39);
+            this.Export.TabIndex = 9;
+            this.Export.Text = "EXPORT";
+            this.Export.UseVisualStyleBackColor = true;
+            this.Export.Click += new System.EventHandler(this.Export_Click);
             // 
             // btn_ahhh
             // 
@@ -459,13 +472,24 @@
             this.btn_ohho.UseVisualStyleBackColor = true;
             this.btn_ohho.Click += new System.EventHandler(this.btn_ohho_Click);
             // 
+            // pictureBox_express
+            // 
+            this.pictureBox_express.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_express.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox_express.Location = new System.Drawing.Point(372, -2);
+            this.pictureBox_express.Name = "pictureBox_express";
+            this.pictureBox_express.Size = new System.Drawing.Size(128, 111);
+            this.pictureBox_express.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_express.TabIndex = 7;
+            this.pictureBox_express.TabStop = false;
+            // 
             // pictureBox_holgi
             // 
             this.pictureBox_holgi.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_holgi.BackgroundImage = global::Hayward.Properties.Resources.holgitrans;
+            this.pictureBox_holgi.BackgroundImage = global::Hayward.Properties.Resources.haywardtrans;
             this.pictureBox_holgi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox_holgi.InitialImage = null;
-            this.pictureBox_holgi.Location = new System.Drawing.Point(355, 12);
+            this.pictureBox_holgi.Location = new System.Drawing.Point(355, 24);
             this.pictureBox_holgi.Name = "pictureBox_holgi";
             this.pictureBox_holgi.Size = new System.Drawing.Size(311, 317);
             this.pictureBox_holgi.TabIndex = 4;
@@ -477,6 +501,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(595, 324);
+            this.Controls.Add(this.Export);
+            this.Controls.Add(this.Reset);
             this.Controls.Add(this.richTextBox_sequence);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_ahhh);
@@ -486,7 +512,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainWindow";
-            this.Text = "Hayward 0.1";
+            this.Text = "Hayward v0.2";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_express)).EndInit();
@@ -531,5 +557,7 @@
         private System.Windows.Forms.Label label_P1_2;
         private System.Windows.Forms.PictureBox pictureBox_holgi;
         private System.Windows.Forms.PictureBox pictureBox_express;
+        private System.Windows.Forms.Button Reset;
+        private System.Windows.Forms.Button Export;
     }
 }

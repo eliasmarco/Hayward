@@ -124,19 +124,22 @@
   <data name="holgi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\holgi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="thumbsup" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thumbsup.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="hayward" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hayward.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="holgitrans" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\holgitrans.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ahhh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ahhh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="holgitrans" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\holgitrans.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="haywardtrans" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\haywardtrans.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
