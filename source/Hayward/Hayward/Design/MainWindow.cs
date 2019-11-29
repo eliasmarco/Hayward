@@ -61,37 +61,41 @@ namespace Hayward
         private void InitData()
         {
             this.iPatternCount = new int[this.nPatterns];
-            lLabelCountList = new List<Label>();
-            lLabelCountList.Add(label_PCount_1_1);
-            lLabelCountList.Add(label_PCount_1_2);
-            lLabelCountList.Add(label_PCount_1_3);
-            lLabelCountList.Add(label_PCount_1_4);
-            lLabelCountList.Add(label_PCount_1_5);
-            lLabelCountList.Add(label_PCount_1_6);
-            lLabelCountList.Add(label_PCount_1_7);
-            lLabelCountList.Add(label_PCount_2_1);
-            lLabelCountList.Add(label_PCount_2_2);
-            lLabelCountList.Add(label_PCount_2_3);
-            lLabelCountList.Add(label_PCount_2_4);
-            lLabelCountList.Add(label_PCount_2_5);
-            lLabelCountList.Add(label_PCount_2_6);
-            lLabelCountList.Add(label_PCount_2_7);
+            lLabelCountList = new List<Label>
+            {
+                label_PCount_1_1,
+                label_PCount_1_2,
+                label_PCount_1_3,
+                label_PCount_1_4,
+                label_PCount_1_5,
+                label_PCount_1_6,
+                label_PCount_1_7,
+                label_PCount_2_1,
+                label_PCount_2_2,
+                label_PCount_2_3,
+                label_PCount_2_4,
+                label_PCount_2_5,
+                label_PCount_2_6,
+                label_PCount_2_7
+            };
 
-            lLabelList = new List<Label>();
-            lLabelList.Add(label_P1_1);
-            lLabelList.Add(label_P1_2);
-            lLabelList.Add(label_P1_3);
-            lLabelList.Add(label_P1_4);
-            lLabelList.Add(label_P1_5);
-            lLabelList.Add(label_P1_6);
-            lLabelList.Add(label_P1_7);
-            lLabelList.Add(label_P2_1);
-            lLabelList.Add(label_P2_2);
-            lLabelList.Add(label_P2_3);
-            lLabelList.Add(label_P2_4);
-            lLabelList.Add(label_P2_5);
-            lLabelList.Add(label_P2_6);
-            lLabelList.Add(label_P2_7);
+            lLabelList = new List<Label>
+            {
+                label_P1_1,
+                label_P1_2,
+                label_P1_3,
+                label_P1_4,
+                label_P1_5,
+                label_P1_6,
+                label_P1_7,
+                label_P2_1,
+                label_P2_2,
+                label_P2_3,
+                label_P2_4,
+                label_P2_5,
+                label_P2_6,
+                label_P2_7
+            };
         }
 
         private void btn_ohho_Click(object sender, EventArgs e)
@@ -127,7 +131,7 @@ namespace Hayward
                 {
                     lLabelCountList[i].BackColor = Color.LightPink;
                 }
-                else 
+                else
                 {
                     lLabelCountList[i].BackColor = Color.LightGray;
                 }
