@@ -141,6 +141,10 @@ namespace Hayward
             }
         }
 
-
+        private void pictureBox_holgi_DoubleClick(object sender, EventArgs e)
+        {
+            Form About = new Hayward.Design.About();
+            About.ShowDialog();
+        }
     }
 }

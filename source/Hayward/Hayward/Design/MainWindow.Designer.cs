@@ -470,18 +470,20 @@
             this.pictureBox_holgi.Size = new System.Drawing.Size(311, 317);
             this.pictureBox_holgi.TabIndex = 4;
             this.pictureBox_holgi.TabStop = false;
+            this.pictureBox_holgi.DoubleClick += new System.EventHandler(this.pictureBox_holgi_DoubleClick);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 327);
+            this.ClientSize = new System.Drawing.Size(595, 324);
             this.Controls.Add(this.richTextBox_sequence);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_ahhh);
             this.Controls.Add(this.btn_ohho);
             this.Controls.Add(this.pictureBox_express);
             this.Controls.Add(this.pictureBox_holgi);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainWindow";
             this.Text = "Hayward 0.1";
