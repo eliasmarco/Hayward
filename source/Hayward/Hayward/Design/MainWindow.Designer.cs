@@ -70,6 +70,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.LightGray;
             this.groupBox1.Controls.Add(this.label_PCount_2_7);
             this.groupBox1.Controls.Add(this.label_PCount_2_6);
             this.groupBox1.Controls.Add(this.label_PCount_2_5);
@@ -99,9 +100,11 @@
             this.groupBox1.Controls.Add(this.label_PCount_1_1);
             this.groupBox1.Controls.Add(this.label_P1_1);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox1.Location = new System.Drawing.Point(166, 12);
+            this.groupBox1.Font = new System.Drawing.Font("Roboto Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.groupBox1.Location = new System.Drawing.Point(166, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(211, 136);
+            this.groupBox1.Size = new System.Drawing.Size(211, 135);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "REFINE PATTERN";
@@ -186,7 +189,7 @@
             // label_P2_7
             // 
             this.label_P2_7.AutoSize = true;
-            this.label_P2_7.BackColor = System.Drawing.SystemColors.Control;
+            this.label_P2_7.BackColor = System.Drawing.Color.LightGray;
             this.label_P2_7.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_P2_7.Location = new System.Drawing.Point(123, 112);
             this.label_P2_7.Name = "label_P2_7";
@@ -197,7 +200,7 @@
             // label_P2_6
             // 
             this.label_P2_6.AutoSize = true;
-            this.label_P2_6.BackColor = System.Drawing.SystemColors.Control;
+            this.label_P2_6.BackColor = System.Drawing.Color.LightGray;
             this.label_P2_6.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_P2_6.Location = new System.Drawing.Point(129, 98);
             this.label_P2_6.Name = "label_P2_6";
@@ -208,7 +211,7 @@
             // label_P2_5
             // 
             this.label_P2_5.AutoSize = true;
-            this.label_P2_5.BackColor = System.Drawing.SystemColors.Control;
+            this.label_P2_5.BackColor = System.Drawing.Color.LightGray;
             this.label_P2_5.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_P2_5.Location = new System.Drawing.Point(129, 84);
             this.label_P2_5.Name = "label_P2_5";
@@ -219,7 +222,7 @@
             // label_P2_4
             // 
             this.label_P2_4.AutoSize = true;
-            this.label_P2_4.BackColor = System.Drawing.SystemColors.Control;
+            this.label_P2_4.BackColor = System.Drawing.Color.LightGray;
             this.label_P2_4.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_P2_4.Location = new System.Drawing.Point(129, 70);
             this.label_P2_4.Name = "label_P2_4";
@@ -230,7 +233,7 @@
             // label_P2_3
             // 
             this.label_P2_3.AutoSize = true;
-            this.label_P2_3.BackColor = System.Drawing.SystemColors.Control;
+            this.label_P2_3.BackColor = System.Drawing.Color.LightGray;
             this.label_P2_3.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_P2_3.Location = new System.Drawing.Point(129, 56);
             this.label_P2_3.Name = "label_P2_3";
@@ -241,7 +244,7 @@
             // label_P2_2
             // 
             this.label_P2_2.AutoSize = true;
-            this.label_P2_2.BackColor = System.Drawing.SystemColors.Control;
+            this.label_P2_2.BackColor = System.Drawing.Color.LightGray;
             this.label_P2_2.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_P2_2.Location = new System.Drawing.Point(129, 42);
             this.label_P2_2.Name = "label_P2_2";
@@ -252,7 +255,7 @@
             // label_P2_1
             // 
             this.label_P2_1.AutoSize = true;
-            this.label_P2_1.BackColor = System.Drawing.SystemColors.Control;
+            this.label_P2_1.BackColor = System.Drawing.Color.LightGray;
             this.label_P2_1.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_P2_1.Location = new System.Drawing.Point(129, 28);
             this.label_P2_1.Name = "label_P2_1";
@@ -329,7 +332,7 @@
             // label_P1_7
             // 
             this.label_P1_7.AutoSize = true;
-            this.label_P1_7.BackColor = System.Drawing.SystemColors.Control;
+            this.label_P1_7.BackColor = System.Drawing.Color.LightGray;
             this.label_P1_7.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_P1_7.Location = new System.Drawing.Point(24, 112);
             this.label_P1_7.Name = "label_P1_7";
@@ -340,7 +343,7 @@
             // label_P1_6
             // 
             this.label_P1_6.AutoSize = true;
-            this.label_P1_6.BackColor = System.Drawing.SystemColors.Control;
+            this.label_P1_6.BackColor = System.Drawing.Color.LightGray;
             this.label_P1_6.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_P1_6.Location = new System.Drawing.Point(24, 98);
             this.label_P1_6.Name = "label_P1_6";
@@ -351,7 +354,7 @@
             // label_P1_5
             // 
             this.label_P1_5.AutoSize = true;
-            this.label_P1_5.BackColor = System.Drawing.SystemColors.Control;
+            this.label_P1_5.BackColor = System.Drawing.Color.LightGray;
             this.label_P1_5.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_P1_5.Location = new System.Drawing.Point(24, 84);
             this.label_P1_5.Name = "label_P1_5";
@@ -362,7 +365,7 @@
             // label_P1_4
             // 
             this.label_P1_4.AutoSize = true;
-            this.label_P1_4.BackColor = System.Drawing.SystemColors.Control;
+            this.label_P1_4.BackColor = System.Drawing.Color.LightGray;
             this.label_P1_4.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_P1_4.Location = new System.Drawing.Point(24, 70);
             this.label_P1_4.Name = "label_P1_4";
@@ -373,7 +376,7 @@
             // label_P1_3
             // 
             this.label_P1_3.AutoSize = true;
-            this.label_P1_3.BackColor = System.Drawing.SystemColors.Control;
+            this.label_P1_3.BackColor = System.Drawing.Color.LightGray;
             this.label_P1_3.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_P1_3.Location = new System.Drawing.Point(24, 56);
             this.label_P1_3.Name = "label_P1_3";
@@ -384,7 +387,7 @@
             // label_P1_2
             // 
             this.label_P1_2.AutoSize = true;
-            this.label_P1_2.BackColor = System.Drawing.SystemColors.Control;
+            this.label_P1_2.BackColor = System.Drawing.Color.LightGray;
             this.label_P1_2.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_P1_2.Location = new System.Drawing.Point(24, 42);
             this.label_P1_2.Name = "label_P1_2";
@@ -406,7 +409,7 @@
             // label_P1_1
             // 
             this.label_P1_1.AutoSize = true;
-            this.label_P1_1.BackColor = System.Drawing.SystemColors.Control;
+            this.label_P1_1.BackColor = System.Drawing.Color.LightGray;
             this.label_P1_1.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_P1_1.Location = new System.Drawing.Point(24, 28);
             this.label_P1_1.Name = "label_P1_1";
@@ -438,7 +441,7 @@
             // 
             this.btn_ahhh.BackgroundImage = global::Hayward.Properties.Resources.ahhh;
             this.btn_ahhh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_ahhh.Location = new System.Drawing.Point(13, 84);
+            this.btn_ahhh.Location = new System.Drawing.Point(13, 83);
             this.btn_ahhh.Name = "btn_ahhh";
             this.btn_ahhh.Size = new System.Drawing.Size(147, 65);
             this.btn_ahhh.TabIndex = 1;
@@ -449,7 +452,7 @@
             // 
             this.btn_ohho.BackgroundImage = global::Hayward.Properties.Resources.ohho;
             this.btn_ohho.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_ohho.Location = new System.Drawing.Point(13, 13);
+            this.btn_ohho.Location = new System.Drawing.Point(13, 12);
             this.btn_ohho.Name = "btn_ohho";
             this.btn_ohho.Size = new System.Drawing.Size(147, 65);
             this.btn_ohho.TabIndex = 0;

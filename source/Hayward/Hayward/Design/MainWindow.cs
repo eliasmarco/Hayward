@@ -118,8 +118,15 @@ namespace Hayward
             for (int i = 0; i < nPatterns; ++i)
             {
                 iPatternCount[i] = Utils.CountPattern(richTextBox_sequence, sPatterns[i]);
+                if (lLabelCountList[i].Text != Utils.CountPattern(richTextBox_sequence, sPatterns[i]).ToString())
+                {
+                    lLabelCountList[i].BackColor = Color.LightPink;
+                }
+                else 
+                {
+                    lLabelCountList[i].BackColor = Color.LightGray;
+                }
                 lLabelCountList[i].Text = Utils.CountPattern(richTextBox_sequence, sPatterns[i]).ToString();
-                lLabelCountList[i].BackColor = Color.LightGray;
                 lLabelList[i].BackColor = Color.LightGray;
             }
 
