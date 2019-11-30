@@ -423,7 +423,6 @@
             // 
             this.RichTextBox_sequence.Location = new System.Drawing.Point(13, 161);
             this.RichTextBox_sequence.Name = "RichTextBox_sequence";
-            this.RichTextBox_sequence.ReadOnly = true;
             this.RichTextBox_sequence.Size = new System.Drawing.Size(364, 154);
             this.RichTextBox_sequence.TabIndex = 6;
             this.RichTextBox_sequence.Text = "";
