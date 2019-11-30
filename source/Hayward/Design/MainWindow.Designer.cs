@@ -65,6 +65,7 @@
             this.Button_Ohho = new System.Windows.Forms.Button();
             this.pictureBox_express = new System.Windows.Forms.PictureBox();
             this.pictureBox_holgi = new System.Windows.Forms.PictureBox();
+            this.Button_Permute = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_express)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_holgi)).BeginInit();
@@ -430,9 +431,9 @@
             // Reset
             // 
             this.Reset.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Reset.Location = new System.Drawing.Point(383, 231);
+            this.Reset.Location = new System.Drawing.Point(383, 161);
             this.Reset.Name = "Reset";
-            this.Reset.Size = new System.Drawing.Size(75, 39);
+            this.Reset.Size = new System.Drawing.Size(92, 39);
             this.Reset.TabIndex = 8;
             this.Reset.Text = "RESET";
             this.Reset.UseVisualStyleBackColor = true;
@@ -441,9 +442,9 @@
             // Export
             // 
             this.Export.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Export.Location = new System.Drawing.Point(383, 276);
+            this.Export.Location = new System.Drawing.Point(383, 206);
             this.Export.Name = "Export";
-            this.Export.Size = new System.Drawing.Size(75, 39);
+            this.Export.Size = new System.Drawing.Size(92, 39);
             this.Export.TabIndex = 9;
             this.Export.Text = "EXPORT";
             this.Export.UseVisualStyleBackColor = true;
@@ -495,11 +496,23 @@
             this.pictureBox_holgi.TabStop = false;
             this.pictureBox_holgi.DoubleClick += new System.EventHandler(this.PictureBox_holgi_DoubleClick);
             // 
+            // Button_Permute
+            // 
+            this.Button_Permute.Font = new System.Drawing.Font("Roboto", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_Permute.Location = new System.Drawing.Point(383, 251);
+            this.Button_Permute.Name = "Button_Permute";
+            this.Button_Permute.Size = new System.Drawing.Size(92, 64);
+            this.Button_Permute.TabIndex = 10;
+            this.Button_Permute.Text = "PERMUTE RARE PATTERNS";
+            this.Button_Permute.UseVisualStyleBackColor = true;
+            this.Button_Permute.Click += new System.EventHandler(this.Button_Permute_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(595, 324);
+            this.Controls.Add(this.Button_Permute);
             this.Controls.Add(this.Export);
             this.Controls.Add(this.Reset);
             this.Controls.Add(this.RichTextBox_sequence);
@@ -558,5 +571,6 @@
         private System.Windows.Forms.PictureBox pictureBox_express;
         private System.Windows.Forms.Button Reset;
         private System.Windows.Forms.Button Export;
+        private System.Windows.Forms.Button Button_Permute;
     }
 }

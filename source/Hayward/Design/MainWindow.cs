@@ -30,6 +30,7 @@ namespace Hayward
             Color.Gold,
             Color.MediumPurple,
         };
+
         private readonly string[] sPatterns = {
             "SFFFSS",
             "SFFFFSSS",
@@ -57,7 +58,7 @@ namespace Hayward
         private void InitData()
         {
             this.slPattern = new List<string>();
-            this.iPatternCount = new int[this.nPatterns];
+            this.iPatternCount = new int[14];// new int[sRarePatterns.Count];
             this.lLabelCountList = new List<Label>
             {
                 label_PCount_1_1,
@@ -93,6 +94,8 @@ namespace Hayward
                 label_P2_6,
                 label_P2_7
             };
+
+
         }
 
         private void Button_ohho_Click(object sender, EventArgs e)
@@ -187,6 +190,46 @@ namespace Hayward
                     writer.Close();
                 }
             }
+        }
+
+        private void Button_Permute_Click(object sender, EventArgs e)
+        {
+            string collectedpattern = RichTextBox_sequence.Text;
+            Process_Permutations(collectedpattern);
+        }
+
+        private void Process_Permutations(string pattern)
+        {
+            List<string> permutePatterns = new List<string>(Utils.ReadFromFile("basepatterns.txt"));
+            List<int> perpatternCount = new List<int>();
+
+            perpatternCount = Utils.SubstringCount(pattern, permutePatterns);
+
+            //// Count Pattern Occurences
+            //for (int i = 0; i < permutePatterns.Count; ++i)
+            //{
+            //    Utils.CountPattern(RichTextBox_sequence, sPatterns[i]);
+            //    if (this.lLabelCountList[i].Text != Utils.CountPattern(RichTextBox_sequence, this.sPatterns[i]).ToString())
+            //    {
+            //        this.lLabelCountList[i].BackColor = Color.LightPink;
+            //    }
+            //    else
+            //    {
+            //        this.lLabelCountList[i].BackColor = Color.LightGray;
+            //    }
+            //    this.lLabelCountList[i].Text = Utils.CountPattern(RichTextBox_sequence, this.sPatterns[i]).ToString();
+            //    this.lLabelList[i].BackColor = Color.LightGray;
+            //}
+
+            //int maxValue = this.iPatternCount.Max();
+            //int maxIndex = this.iPatternCount.ToList().IndexOf(maxValue);
+            //Utils.HighlightPattern(RichTextBox_sequence, this.sPatterns[maxIndex], this.cColors[maxIndex]);
+
+            //if (maxValue != 0)
+            //{
+            //    lLabelCountList[maxIndex].BackColor = Color.LawnGreen;
+            //    lLabelList[maxIndex].BackColor = Color.LawnGreen;
+            //}
         }
     }
 }

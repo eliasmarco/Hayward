@@ -1,10 +1,44 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using System.Drawing;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.IO;
 
 namespace Hayward
 {
-    static class Utils
+    public static class Utils
     {
+        public static void WriteToFile(List<string> list, string filename)
+        {
+            using (TextWriter tw = new StreamWriter(filename))
+            {
+                foreach (string s in list)
+                    tw.WriteLine(s);
+            }
+        }
+
+        public static List<string> ReadFromFile(string filename)
+        {
+            string[] file = File.ReadAllLines(filename);
+            List<string> linelist = new List<string>(file);
+
+            return linelist;
+        }
+
+        public static List<int> SubstringCount(string main, List<string> substrings)
+        {
+            List<int> iCount = new List<int>();
+
+            for (int y = 0; y < substrings.Count; y++)
+            {
+                iCount[y] += (main.Length - main.Replace(substrings[y], String.Empty).Length) / substrings[y].Length;
+            }
+
+            return iCount;
+        }
+
         public static int CountPattern(this RichTextBox myRtb, string word)
         {
             int iCount = 0;
