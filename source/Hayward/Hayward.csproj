@@ -95,5 +95,11 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Permutator\Permutator.csproj">
+      <Project>{a95689eb-68cd-436b-b37a-7b684a8b0491}</Project>
+      <Name>Permutator</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

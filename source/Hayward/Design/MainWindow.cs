@@ -9,12 +9,17 @@ namespace Hayward
 {
     public partial class MainWindow : Form
     {
-        private List<string> slPattern;
-        private List<Label> lLabelCountList;
-        private List<Label> lLabelList;
-        private int[] iPatternCount;
-        private readonly int nPatterns = 14;
-        private readonly Color[] cColors = {
+        // List of Form Labels for Patterns and its count
+        private List<Label> lCommonPatternLabelList;
+        private List<Label> lCommonPatternLabelCountList;
+
+        private List<string> slSequence;
+        private List<string> lListOfAllPatterns;
+
+        private int[] iCountOfCommonPatterns;
+        private readonly int nNumOfCommonPatterns = 14;
+
+        private readonly Color[] cColorsForCommonPatterns = {
             Color.Red,
             Color.Green,
             Color.Blue,
@@ -31,21 +36,21 @@ namespace Hayward
             Color.MediumPurple,
         };
 
-        private readonly string[] sPatterns = {
-            "SFFFSS",
-            "SFFFFSSS",
-            "SFFFFFSSSS",
-            "SFFFFFFSSSSS",
-            "SFFFFFFFSSSSSS",
-            "SFFFFFFFFSSSSSSS",
-            "SFFFFFFFFFSSSSSSSS",
-            "SFFFFSS",
-            "SFFFFFSSS",
-            "SFFFFFFSSSS",
-            "SFFFFFFFSSSSS",
-            "SFFFFFFFFSSSSSS",
-            "SFFFFFFFFFSSSSSSS",
-            "SFFFFFFFFFFSSSSSSSS",
+        private readonly string[] sCommonPatterns = {
+            "FFFSS",
+            "FFFFSSS",
+            "FFFFFSSSS",
+            "FFFFFFSSSSS",
+            "FFFFFFFSSSSSS",
+            "FFFFFFFFSSSSSSS",
+            "FFFFFFFFFSSSSSSSS",
+            "FFFFSS",
+            "FFFFFSSS",
+            "FFFFFFSSSS",
+            "FFFFFFFSSSSS",
+            "FFFFFFFFSSSSSS",
+            "FFFFFFFFFSSSSSSS",
+            "FFFFFFFFFFSSSSSSSS",
         };
 
         public MainWindow()
@@ -57,9 +62,9 @@ namespace Hayward
 
         private void InitData()
         {
-            this.slPattern = new List<string>();
-            this.iPatternCount = new int[14];// new int[sRarePatterns.Count];
-            this.lLabelCountList = new List<Label>
+            this.slSequence = new List<string>();
+            this.iCountOfCommonPatterns = new int[nNumOfCommonPatterns];
+            this.lCommonPatternLabelCountList = new List<Label>
             {
                 label_PCount_1_1,
                 label_PCount_1_2,
@@ -77,7 +82,7 @@ namespace Hayward
                 label_PCount_2_7
             };
 
-            this.lLabelList = new List<Label>
+            this.lCommonPatternLabelList = new List<Label>
             {
                 label_P1_1,
                 label_P1_2,
@@ -95,70 +100,76 @@ namespace Hayward
                 label_P2_7
             };
 
-
+            Reset_Data();
+            lListOfAllPatterns = Permutator.Core.GenerateAllPatterns(sCommonPatterns.ToList<string>());
         }
 
         private void Button_ohho_Click(object sender, EventArgs e)
         {
-            this.slPattern.Add("S");
+            this.slSequence.Add("S");
             pictureBox_express.Image = Properties.Resources.thumbsup;
             pictureBox_express.Refresh();
-            UpdateText();
+            UpdateSequenceTextBox();
         }
 
         private void Button_ahhh_Click(object sender, EventArgs e)
         {
-            this.slPattern.Add("F");
+            this.slSequence.Add("F");
             pictureBox_express.Image = Properties.Resources.fail;
             pictureBox_express.Refresh();
-            UpdateText();
+            UpdateSequenceTextBox();
         }
 
-        private void UpdateText()
+        private void UpdateSequenceTextBox()
         {
-            RichTextBox_sequence.Text = string.Join("", slPattern);
+            RichTextBox_sequence.Text = string.Join("", slSequence);
 
-            SearchPatterns();
+            SearchSequenceForPatterns();
         }
 
-        private void SearchPatterns()
+        private void SearchSequenceForPatterns()
         {
-            // Count Pattern Occurences
-            for (int i = 0; i < nPatterns; ++i)
+            string distinctpattern;
+            // Count Common Pattern Occurences
+            for (int i = 0; i < nNumOfCommonPatterns; ++i)
             {
-                this.iPatternCount[i] = Utils.CountPattern(RichTextBox_sequence, sPatterns[i]);
-                if (this.lLabelCountList[i].Text != Utils.CountPattern(RichTextBox_sequence, this.sPatterns[i]).ToString())
+                distinctpattern = (sCommonPatterns[i][0] == 'F') ? "S" + sCommonPatterns[i] : "F" + sCommonPatterns[i];
+                this.iCountOfCommonPatterns[i] = Utils.CountPattern(RichTextBox_sequence, distinctpattern);
+                if (this.lCommonPatternLabelCountList[i].Text != Utils.CountPattern(RichTextBox_sequence, distinctpattern).ToString())
                 {
-                    this.lLabelCountList[i].BackColor = Color.LightPink;
+                    this.lCommonPatternLabelCountList[i].BackColor = Color.LightPink;
                 }
                 else
                 {
-                    this.lLabelCountList[i].BackColor = Color.LightGray;
+                    this.lCommonPatternLabelCountList[i].BackColor = Color.LightGray;
                 }
-                this.lLabelCountList[i].Text = Utils.CountPattern(RichTextBox_sequence, this.sPatterns[i]).ToString();
-                this.lLabelList[i].BackColor = Color.LightGray;
+                this.lCommonPatternLabelCountList[i].Text = Utils.CountPattern(RichTextBox_sequence, distinctpattern).ToString();
+                this.lCommonPatternLabelList[i].BackColor = Color.LightGray;
             }
 
-            int maxValue = this.iPatternCount.Max();
-            int maxIndex = this.iPatternCount.ToList().IndexOf(maxValue);
-            Utils.HighlightPattern(RichTextBox_sequence, this.sPatterns[maxIndex], this.cColors[maxIndex]);
-
+            int maxValue = this.iCountOfCommonPatterns.Max();
             if (maxValue != 0)
             {
-                lLabelCountList[maxIndex].BackColor = Color.LawnGreen;
-                lLabelList[maxIndex].BackColor = Color.LawnGreen;
+                int maxIndex = this.iCountOfCommonPatterns.ToList().IndexOf(maxValue);
+                distinctpattern = (sCommonPatterns[maxIndex][0] == 'F') ? "S" + sCommonPatterns[maxIndex] : "F" + sCommonPatterns[maxIndex];
+                Utils.HighlightPattern(RichTextBox_sequence, distinctpattern, this.cColorsForCommonPatterns[maxIndex]);
+                lCommonPatternLabelCountList[maxIndex].BackColor = Color.LawnGreen;
+                lCommonPatternLabelList[maxIndex].BackColor = Color.LawnGreen;
+                Update_Result(this.sCommonPatterns[maxIndex], maxValue);
             }
         }
 
         private void Reset_Data()
         {
-            for (int i = 0; i < nPatterns; ++i)
+            for (int i = 0; i < nNumOfCommonPatterns; ++i)
             {
-                this.lLabelCountList[i].BackColor = Color.LightGray;
-                this.lLabelCountList[i].Text = "0";
-                this.lLabelList[i].BackColor = Color.LightGray;
+                this.lCommonPatternLabelCountList[i].BackColor = Color.LightGray;
+                this.lCommonPatternLabelCountList[i].Text = "0";
+                this.lCommonPatternLabelList[i].BackColor = Color.LightGray;
             }
-            this.slPattern.Clear();
+            this.slSequence.Clear();
+            RichTextBox_sequence.Text = "";
+            Update_Result("--------", 0);
         }
 
         private void PictureBox_holgi_DoubleClick(object sender, EventArgs e)
@@ -169,7 +180,6 @@ namespace Hayward
 
         private void Reset_Click(object sender, EventArgs e)
         {
-            RichTextBox_sequence.Text = "";
             Reset_Data();
         }
 
@@ -194,42 +204,46 @@ namespace Hayward
 
         private void Button_Permute_Click(object sender, EventArgs e)
         {
-            string collectedpattern = RichTextBox_sequence.Text;
-            Process_Permutations(collectedpattern);
+            Process_Permutations();
         }
 
-        private void Process_Permutations(string pattern)
+        private void Process_Permutations()
         {
-            List<string> permutePatterns = new List<string>(Utils.ReadFromFile("basepatterns.txt"));
+
             List<int> perpatternCount = new List<int>();
+            string distinctpattern;
 
-            perpatternCount = Utils.SubstringCount(pattern, permutePatterns);
+            // Count Pattern Occurences
+            for (int i = 0; i < lListOfAllPatterns.Count; ++i)
+            {
+                distinctpattern = (lListOfAllPatterns[i][0] == 'F') ? "S" + lListOfAllPatterns[i] : "F" + lListOfAllPatterns[i];
+                perpatternCount.Add(Utils.CountPattern(RichTextBox_sequence, distinctpattern));
+            }
 
-            //// Count Pattern Occurences
-            //for (int i = 0; i < permutePatterns.Count; ++i)
-            //{
-            //    Utils.CountPattern(RichTextBox_sequence, sPatterns[i]);
-            //    if (this.lLabelCountList[i].Text != Utils.CountPattern(RichTextBox_sequence, this.sPatterns[i]).ToString())
-            //    {
-            //        this.lLabelCountList[i].BackColor = Color.LightPink;
-            //    }
-            //    else
-            //    {
-            //        this.lLabelCountList[i].BackColor = Color.LightGray;
-            //    }
-            //    this.lLabelCountList[i].Text = Utils.CountPattern(RichTextBox_sequence, this.sPatterns[i]).ToString();
-            //    this.lLabelList[i].BackColor = Color.LightGray;
-            //}
+            int maxValue = perpatternCount.Max();
+            if (maxValue != 0)
+            {
+                int maxIndex = perpatternCount.ToList().IndexOf(maxValue);
+                distinctpattern = (lListOfAllPatterns[maxIndex][0] == 'F') ? "S" + lListOfAllPatterns[maxIndex] : "F" + lListOfAllPatterns[maxIndex];
+                Utils.HighlightPattern(RichTextBox_sequence, distinctpattern, Color.LawnGreen); // dummy initial char
 
-            //int maxValue = this.iPatternCount.Max();
-            //int maxIndex = this.iPatternCount.ToList().IndexOf(maxValue);
-            //Utils.HighlightPattern(RichTextBox_sequence, this.sPatterns[maxIndex], this.cColors[maxIndex]);
+                Update_Result(lListOfAllPatterns[maxIndex], maxValue);
+            }
+    }
 
-            //if (maxValue != 0)
-            //{
-            //    lLabelCountList[maxIndex].BackColor = Color.LawnGreen;
-            //    lLabelList[maxIndex].BackColor = Color.LawnGreen;
-            //}
+        public void Update_Result(string pattern, int count)
+        {
+            RichTextBox_WinPattern.Text = pattern;
+            RichTextBox_WinCount.Text = count.ToString();
+            RichTextBox_WinPattern.SelectAll();
+            RichTextBox_WinPattern.SelectionAlignment = HorizontalAlignment.Center;
+            RichTextBox_WinCount.SelectAll();
+            RichTextBox_WinCount.SelectionAlignment = HorizontalAlignment.Center;
+        }
+
+        private void Button_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
