@@ -101,7 +101,7 @@ namespace Hayward
             };
 
             Reset_Data();
-            lListOfAllPatterns = Permutator.Core.GenerateAllPatterns(sCommonPatterns.ToList<string>());
+            lListOfAllPatterns = Utils.GenerateAllPatterns(sCommonPatterns.ToList<string>());
         }
 
         private void Button_ohho_Click(object sender, EventArgs e)

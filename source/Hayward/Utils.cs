@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
+using Facet.Combinatorics;
 
 namespace Hayward
 {
@@ -76,6 +77,24 @@ namespace Hayward
                 myRtb.SelectionLength = 0;
                 myRtb.SelectionColor = Color.Black;
             }
+        }
+
+        public static List<string> GenerateAllPatterns(List<string> baselist)
+        {
+            List<string> sAllPatterns = new List<string>();
+
+            Permutations<char> P1;
+
+            for (int i = 0; i < baselist.Count; ++i)
+            {
+                P1 = new Permutations<char>(baselist[i].ToCharArray(), GenerateOption.WithoutRepetition);
+                foreach (IList<char> p in P1)
+                {
+                    sAllPatterns.Add(new string(p.ToArray<char>()));
+                }
+            }
+
+            return sAllPatterns;
         }
     }
 }
